@@ -17,6 +17,7 @@ modelo = tf.keras.models.load_model(
 )
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 @app.route('/')
@@ -107,3 +108,7 @@ def prediccion_(prediccion):
         return "pepsi"
     if prediccion == 19:
         return "saba"
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
