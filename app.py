@@ -22,7 +22,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 @app.route('/')
 def hello_world():
-    return 'Hola Alfred'
+    return 'Hola mundo'
 
 
 def allowed_file(filename):
