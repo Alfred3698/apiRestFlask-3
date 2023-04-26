@@ -22,7 +22,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 @app.route('/')
 def hello_world():
-    return 'Hola Mundo'
+    return 'Hola Alfred'
 
 
 def allowed_file(filename):
@@ -53,9 +53,9 @@ def upload_file():
             print("iniciando guardado de archivo")
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print("iniciando prediccion")
-            # prediccion = categorizar(UPLOAD_FOLDER+'/'+filename)
-            # os.remove(UPLOAD_FOLDER+'/'+filename)
-            return prediccion_("cola")
+            prediccion = categorizar(UPLOAD_FOLDER+'/'+filename)
+            os.remove(UPLOAD_FOLDER+'/'+filename)
+            return prediccion_(prediccion)
 
 
 def categorizar(path):
